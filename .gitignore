@@ -1,0 +1,12 @@
+# Arquivos que NÃO devem ir pro GitHub
+
+# ambiente virtual (cada pessoa cria o seu)
+venv/
+
+# arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# segredos (chave da API) nunca vão pro repositório
+.env
+.streamlit/secrets.toml

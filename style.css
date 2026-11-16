@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@600;700&display=swap');
+
+:root {
+    --fonte-titulo: 'Grandstander';
+    --cor-banner: #4A1C2E;      /* vinho do banner */
+    --cor-pagina: #F6EDE0;      /* creme do fundo da página */
+    --cor-destaque: #9B2C4E;    /* vinho mais vivo dos detalhes */
+    --cor-realce: #F4B8A0;      /* etiqueta do banner */
+    --margem-lateral: 3rem;     /* espaço nas laterais do conteúdo */
+}
+
+/* ---------- página ---------- */
+.stApp { background: var(--cor-pagina); }
+[data-testid="stHeader"] { background: transparent; }
+.block-container, [data-testid="stMainBlockContainer"] {
+    padding: 0 var(--margem-lateral) 3rem;
+    max-width: 100%;
+}
+.stApp h2, .stApp h3, .stApp h4 { font-family: var(--fonte-titulo), sans-serif !important; }
+
+/* ---------- banner: ocupa a largura inteira da tela ---------- */
+.banner {
+    background: var(--cor-banner);
+    /* margens negativas: o banner "fura" as margens e encosta nas bordas da tela */
+    margin: -1rem calc(-1 * var(--margem-lateral)) 2rem;
+    padding-top: 4.5rem;
+    overflow: hidden;
+}
+.banner-texto { padding: 0 var(--margem-lateral) 2rem; max-width: 900px; }
+.banner .etiqueta {
+    color: var(--cor-realce);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.banner h1 {
+    color: white;
+    font-family: var(--fonte-titulo), sans-serif !important;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0.3rem 0 0.6rem;
+}
+.banner p { color: #E3CFD6; font-size: 1.1rem; margin: 0; }
+
+/* estante: os livros são retângulos coloridos alinhados por baixo */
+.estante {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 135px;
+    padding-left: var(--margem-lateral);
+    overflow: hidden;
+}
+.livro {
+    flex-shrink: 0;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+}
+.livro span {                 /* faixinha na lombada */
+    position: absolute;
+    left: 4px; right: 4px; top: 14px;
+    height: 5px;
+    background: rgba(74, 28, 46, 0.35);
+    border-radius: 2px;
+}
+.livro.deitado { transform: rotate(-9deg); transform-origin: bottom right; margin: 0 10px 0 4px; }
+.prateleira { height: 14px; background: #C9A27A; }
+
+/* ---------- cartões brancos ---------- */
+[class*="st-key-cartao"], .como-funciona {
+    background: white;
+    border: 1px solid #E8DCCB;
+    border-radius: 16px;
+    padding: 1.3rem 1.5rem;
+}
+
+/* cartão "como funciona" */
+.como-funciona { margin-top: 0.5rem; }
+.como-funciona h4 { padding: 0 0 0.6rem; font-size: 1.1rem; }
+.passo { display: flex; gap: 0.8rem; align-items: flex-start; margin-bottom: 0.7rem; font-size: 0.95rem; }
+.passo span {
+    flex-shrink: 0;
+    width: 1.6rem; height: 1.6rem;
+    border-radius: 50%;
+    background: var(--cor-destaque);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* botões das perguntas sugeridas */
+.stButton button { border-radius: 999px; font-size: 0.85rem; }
+
+/* rodapé: uma linha fina na cor da prateleira, repetindo o banner de leve */
+.rodape {
+    color: #7A6670;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 4px solid #C9A27A;
+}
+
+/* telas pequenas: margens menores e título menor */
+@media (max-width: 700px) {
+    :root { --margem-lateral: 1rem; }
+    .banner h1 { font-size: 2rem; }
+}

@@ -1,0 +1,7 @@
+# Cores dos cartões e dos textos. O fundo escuro da página é definido no app.py.
+[theme]
+base = "light"
+primaryColor = "#9B2C4E"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F3EEEF"
+textColor = "#2B1A22"
