@@ -3,7 +3,7 @@
 Você envia um artigo em PDF e faz perguntas sobre ele em português. O app procura os trechos do artigo que têm a ver com a pergunta e um modelo de linguagem responde usando só esses trechos, dizendo de que página tirou cada informação.
 
 Essa técnica se chama RAG (geração aumentada por recuperação). Fiz porque passei um ano lendo artigo de bioinformática na iniciação científica e queria um jeito mais rápido de achar o que eu precisava dentro deles.
-
+![Tela do app](imagens/tela.png)
 ## Arquitetura
 
 ```mermaid
